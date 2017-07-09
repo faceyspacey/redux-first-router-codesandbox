@@ -6,7 +6,7 @@ import App from './components/App'
 import configureStore from './configureStore'
 
 const history = createHistory()
-const store = configureStore(history, window.REDUX_STATE)
+const store = configureStore(history)
 
 const render = App =>
   ReactDOM.render(
