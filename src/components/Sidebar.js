@@ -50,7 +50,7 @@ const Sidebar = ({ onClick, path }) =>
       FP
     </span>
 
-    <div style={{height: 20 }} />
+    <div style={{height: 17 }} />
 
     <Link to={{ type: 'ADMIN' }}>ADMIN</Link>
   </div>
