@@ -1,25 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {
-  AnimatedTransitionGroup,
-  AnimatedChild
-} from 'animated-transition-group'
-
-import UniversalComponent from './UniversalComponent'
-import styles from '../css/Switcher'
+import { TransitionGroup, Transition } from 'transition-group'
+import universal from 'react-universal-component'
+import '../css/Switcher.css'
 
 const Switcher = ({ page, direction, isLoading }) =>
-  <AnimatedTransitionGroup
-    component='div'
-    className={`${styles.switcher} ${direction}`}
+  <TransitionGroup
+    className={`switcher ${direction}`}
     duration={500}
-    debounce={500}
-    prefix='fade'
+    prefix='slide'
   >
-    <AnimatedChild key={page}>
+    <Transition key={page}>
       <UniversalComponent page={page} isLoading={isLoading} />
-    </AnimatedChild>
-  </AnimatedTransitionGroup>
+    </Transition>
+  </TransitionGroup>
 
 const mapState = ({ page, direction, videosByCategory }) => {
   const { category, categories } = videosByCategory
@@ -28,3 +22,10 @@ const mapState = ({ page, direction, videosByCategory }) => {
 }
 
 export default connect(mapState)(Switcher)
+
+const UniversalComponent = universal(props => import(`./${props.page}`), {
+  chunkName: props => props.page,
+  minDelay: 500,
+  loading: () => <div className='spinner'><div /></div>,
+  error: () => <div className='notFound'>PAGE NOT FOUND - 404</div>
+})

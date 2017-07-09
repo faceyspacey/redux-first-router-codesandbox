@@ -2,26 +2,23 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Link, { NavLink } from 'redux-first-router-link'
 import { goToPage } from '../actions'
-import styles from '../css/Sidebar'
+import '../css/Sidebar.css'
 
 const Sidebar = ({ onClick, path }) =>
-  <div className={styles.sidebar}>
+  <div className='sidebar'>
     <h2>SEO-FRIENDLY LINKS</h2>
 
-    <NavLink activeClassName={styles.active} exact to='/'>HOME</NavLink>
+    <NavLink activeClassName='active' exact to='/'>HOME</NavLink>
 
-    <NavLink activeClassName={styles.active} to='/list/db-graphql'>
+    <NavLink activeClassName='active' to='/list/db-graphql'>
       DB & GRAPHQL
     </NavLink>
 
-    <NavLink activeClassName={styles.active} to={['list', 'react-redux']}>
+    <NavLink activeClassName='active' to={['list', 'react-redux']}>
       REACT & REDUX
     </NavLink>
 
-    <NavLink
-      activeClassName={styles.active}
-      to={{ type: 'LIST', payload: { category: 'fp' } }}
-    >
+    <NavLink activeClassName='active' to={{ type: 'LIST', payload: { category: 'fp' } }}>
       FP
     </NavLink>
 
@@ -52,12 +49,18 @@ const Sidebar = ({ onClick, path }) =>
     >
       FP
     </span>
+
+    <div style={{height: 40 }} />
+
+    <Link to={{ type: 'ADMIN' }}>ADMIN</Link>
   </div>
 
 const active = (currentPath, path) =>
-  currentPath === path ? styles.active : ''
+  currentPath === path ? 'active' : ''
 
 const mapDispatch = { onClick: goToPage }
 const mapState = ({ location }) => ({ path: location.pathname })
-
 export default connect(mapState, mapDispatch)(Sidebar)
+
+
+// NOTE: there's an example using <Link /> instead of <Nav Link /> for your reference :)

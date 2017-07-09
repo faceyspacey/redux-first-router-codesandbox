@@ -87,13 +87,6 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-animated-transition-group@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/animated-transition-group/-/animated-transition-group-1.0.22.tgz#aa34a5bd57bc85c954f6861b5aa3f2db2ea9c2ff"
-  dependencies:
-    prop-types "^15.5.10"
-    react-addons-transition-group "^15.4.2"
-
 anser@1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/anser/-/anser-1.2.5.tgz#5dcfc956eaa373b9c23010dd20dabec2ce19475b"
@@ -5045,9 +5038,9 @@ react-transition-group@^1.2.0:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react-universal-component@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-1.4.1.tgz#5d3eccbd08dd897c0425fd586b083fa90dc32bc8"
+react-universal-component@next:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-2.0.3.tgz#fa87a3fddfc771f89210f0dcc3af4e1f69b0ef04"
   dependencies:
     require-universal-module "^1.2.8"
 
@@ -5962,6 +5955,13 @@ tough-cookie@^2.3.2, tough-cookie@~2.3.0:
 tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+
+transition-group@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/transition-group/-/transition-group-0.0.1.tgz#f92bd6d463f4d265f1192449183db9470c88acaf"
+  dependencies:
+    prop-types "^15.5.10"
+    react-addons-transition-group "^15.4.2"
 
 trim-newlines@^1.0.0:
   version "1.0.0"

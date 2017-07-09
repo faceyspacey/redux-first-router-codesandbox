@@ -1,36 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-import styles from '../css/DevTools'
+import '../css/DevTools.css'
 
 const DevTools = () =>
-  <div className={styles.container}>
-    <div className={styles.titleBar}>
+  <div className='container'>
+    <div className='titleBar'>
       <span>ACTIONS</span>
       <span>DEV-TOOLS</span>
       <span>STATE</span>
     </div>
 
-    <div className={styles.devTools}>
+    <div className='devTools'>
       <ActionsBox />
       <StateBox />
     </div>
   </div>
 
 const ActionsBoxComponent = ({ actions }) =>
-  <div className={styles.actionsBox}>
+  <div className='actionsBox'>
     <pre>{JSON.stringify(actions, null, 1)}</pre>
   </div>
 
-const ActionsBox = connect(({ actions }) => ({ actions }))(ActionsBoxComponent)
+const mapState1 = ({ actions }) => ({ actions })
+const ActionsBox = connect(mapState1)(ActionsBoxComponent)
 
 const StateBoxComponent = state =>
-  <div className={styles.stateBox}>
+  <div className='stateBox'>
     <pre>{JSON.stringify(state, null, 1)}</pre>
   </div>
 
-const StateBox = connect(state => ({ ...state, actions: undefined }))(
-  StateBoxComponent
-)
+const mapState2 = state => ({ ...state, actions: undefined })
+const StateBox = connect(mapState2)(StateBoxComponent)
 
 export default DevTools

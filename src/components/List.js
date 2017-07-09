@@ -1,27 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Link from 'redux-first-router-link'
-
-import styles from '../css/List'
+import '../css/List.css'
 
 const List = ({ videos }) =>
-  <div className={styles.list}>
+  <div className='list'>
     {videos.map((video, key) => <Row {...video} key={key} />)}
   </div>
 
 const Row = ({ slug, title, youtubeId, by, color }) =>
   <Link
-    className={styles.row}
+    className='row'
     to={`/video/${slug}`}
     style={{ backgroundImage: youtubeBackground(youtubeId) }}
   >
-    <div className={styles.avatar} style={{ backgroundColor: color }}>
+    <div className='avatar' style={{ backgroundColor: color }}>
       {initials(by)}
     </div>
-    <span className={styles.title}>{title}</span>
+    <span className='title'>{title}</span>
 
-    <div className={styles.gradient} />
-    <span className={styles.by}>by: {by}</span>
+    <div className='gradient' />
+    <span className='by'>by: {by}</span>
   </Link>
 
 const youtubeBackground = youtubeId =>
@@ -32,7 +31,7 @@ const initials = by => by.split(' ').map(name => name[0]).join('')
 const mapState = state => {
   const { category, categories } = state.videosByCategory
   const slugs = categories[category] || []
-  const videos = slugs.map(slug => state.videoHash[slug])
+  const videos = slugs.map(slug => state.videosHash[slug])
   return { videos }
 }
 

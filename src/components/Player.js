@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Link from 'redux-first-router-link'
-
-import styles from '../css/Video'
+import '../css/Video.css'
 
 const Player = ({ playing, youtubeId, slug, color }) =>
   !playing
     ? <div
-      className={styles.heroContainer}
+      className='heroContainer'
       style={{ backgroundImage: youtubeBackground(youtubeId) }}
     >
       <Link to={`/video/${slug}/play`}>
@@ -15,8 +14,9 @@ const Player = ({ playing, youtubeId, slug, color }) =>
       </Link>
     </div>
     : <iframe
-      className={styles.iframe}
+      className='iframe'
       frameBorder='0'
+      title='programming video'
       allowFullScreen
       src={youtubeIframeSrc(youtubeId)}
     />
@@ -27,4 +27,5 @@ const youtubeBackground = youtubeId =>
 const youtubeIframeSrc = youtubeId =>
   `https://www.youtube.com/embed/${youtubeId}?playlist=${youtubeId}&autoplay=1&rel=0&theme=dark&loop=1&color=white&controls=2&autohide=1&showinfo=0`
 
-export default connect(({ playing }) => ({ playing }))(Player)
+const mapState = ({ playing }) => ({ playing })
+export default connect(mapState)(Player)

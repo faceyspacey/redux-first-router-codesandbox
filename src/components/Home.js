@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from '../css/Home'
+import '../css/Home.css'
 
 const Home = () =>
-  <div className={styles.home}>
+  <div className='home'>
     <h1>HOME</h1>
 
     <h2>
@@ -27,14 +27,10 @@ const Home = () =>
 
     <pre>
       {`
-const goToPage = (type, category) => {
-  return {
-    type,
-    payload: category && { category }
-  }
-}
-
-dispatch(goToPage('LIST', 'react-redux'))
+onClick: () => dispatch({
+  type: 'LIST',
+  payload: { category: 'react-redux' }
+})
       `}
     </pre>
 

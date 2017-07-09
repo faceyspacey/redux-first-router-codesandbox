@@ -1,28 +1,27 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import Player from './Player'
-import styles from '../css/Video'
+import '../css/Video.css'
 
 const Video = ({ slug, title, youtubeId, category, by, color, tip }) =>
-  <div className={styles.video}>
+  <div className='video'>
     <Player slug={slug} youtubeId={youtubeId} color={color} />
 
-    <div className={styles.infoContainer}>
-      <span className={styles.title}>{title}</span>
+    <div className='infoContainer'>
+      <span className='videoTitle'>{title}</span>
 
-      <div className={styles.infoRow}>
-        <div className={styles.category} style={{ backgroundColor: color }}>
+      <div className='infoRow'>
+        <div className='category' style={{ backgroundColor: color }}>
           <span>{category}</span>
         </div>
 
-        <span className={styles.byText}>by: {by}</span>
+        <span className='byText'>by: {by}</span>
       </div>
 
-      <div className={styles.separator} />
+      <div className='separator' />
 
-      <span className={styles.tipTitle}>Tip</span>
-      <div className={styles.tip}>
+      <span className='tipTitle'>Tip</span>
+      <div className='tip'>
         {slug
           ? tip
           : <span style={{ color: 'orange' }}>
@@ -41,6 +40,5 @@ const Video = ({ slug, title, youtubeId, category, by, color, tip }) =>
     </div>
   </div>
 
-const mapState = state => state.videoHash[state.slug] || {}
-
+const mapState = state => state.videosHash[state.slug] || {}
 export default connect(mapState)(Video)

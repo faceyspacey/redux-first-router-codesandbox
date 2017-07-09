@@ -119,23 +119,23 @@
 
 /** NEXT TRANSITION **/
 
-:global(.next) :global(.fade-enter) {
+.next .slide-enter {
   transform: translateX(100%); 
   opacity: 0; 
 }
 
-:global(.next) :global(.fade-enter-active) {
+.next .slide-enter-active {
   transform: translateX(0%); 
   opacity: 1;
   transition: all 500ms;
 }
 
-:global(.next) :global(.fade-leave) {
+.next .slide-leave {
   transform: translateX(0%); 
   opacity: 1; 
 }
 
-:global(.next) :global(.fade-leave-active) {
+.next .slide-leave-active {
   transform: translateX(-100%); 
   opacity: 0; 
   transition: all 500ms;
@@ -145,23 +145,23 @@
 
 /** BACK TRANSITION **/
 
-:global(.back) :global(.fade-enter) {
+.back .slide-enter {
   transform: translateX(-100%); 
   opacity: 0; 
 }
 
-:global(.back) :global(.fade-enter-active) {
+.back .slide-enter-active {
   transform: translateX(0%); 
   opacity: 1; 
   transition: all 500ms;
 }
 
-:global(.back) :global(.fade-leave) {
+.back .slide-leave {
   transform: translateX(0%); 
   opacity: 1; 
 }
 
-:global(.back) :global(.fade-leave-active) {
+.back .slide-leave-active {
   transform: translateX(100%); 
   opacity: 0; 
   transition: all 500ms;

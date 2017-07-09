@@ -1,5 +1,6 @@
 import { redirect, NOT_FOUND } from 'redux-first-router'
-import { fetchData, isAllowed, isServer } from './utils'
+import fetchData from './api'
+import { isAllowed } from './utils'
 
 export default {
   HOME: '/',
@@ -7,13 +8,12 @@ export default {
     path: '/list/:category',
     thunk: async (dispatch, getState) => {
       const {
-        jwToken,
         location: { payload: { category } },
         videosByCategory: { categories }
       } = getState()
 
-      if (categories[category]) return
-      const videos = await fetchData(`/api/videos/${category}`, jwToken)
+      if (categories[category]) return // has data in redux already
+      const videos = await fetchData(`/api/videos/${category}`)
 
       if (videos.length === 0) {
         return dispatch({ type: NOT_FOUND })
@@ -41,6 +41,8 @@ export default {
         const { slug } = getState().location.payload
         const action = redirect({ type: 'VIDEO', payload: { slug } })
 
+        // we simply don't let you visit the playing video page directly
+        // ...cuz that's what we feel like doing, but we like it URL-ized
         dispatch(action)
       }
     }
@@ -48,7 +50,7 @@ export default {
   LOGIN: '/login',
   ADMIN: {
     path: '/admin', // TRY: visit this path or dispatch ADMIN
-    role: 'admin' // + change jwToken to 'real' in server/index.js
+    role: 'admin'   // + in reducers/index.js set the user's role to admin to get in
   }
 }
 
@@ -64,10 +66,10 @@ export const options = {
   onAfterChange: (dispatch, getState) => {
     const { type } = getState().location
 
-    if (type === 'LOGIN' && !isServer) {
+    if (type === 'LOGIN') {
       setTimeout(() => {
         alert(
-          "NICE, You're adventurous! Try changing the jwToken cookie from 'fake' to 'real' in server/index.js to access the Admin Panel. Then 'onBeforeChange' will let you in."
+          "NICE, You're adventurous! First look in the 'src/routesMap.js' file to see how you got redirected to /login. Then try setting the user's role to 'admin' in reducers/index.js to get in access the Admin Panel. Then 'onBeforeChange' will let you in."
         )
       }, 1500)
     }
@@ -112,12 +114,14 @@ export const options = {
 // ANSWER: videoRoute.thunk.body:
 /* HURRAY! You found the answers on the back of the cereal box!
 
-const { jwToken, location: { payload: { slug } } } = getState()
-const video = await fetchData(`/api/video/${slug}`, jwToken)
+thunk: async (dispatch, getState) => {
+  const { location: { payload: { slug } } } = getState()
+  const video = await fetchData(`/api/video/${slug}`)
 
-if (!video) {
-  return dispatch({ type: NOT_FOUND })
+  if (!video) {
+    return dispatch({ type: NOT_FOUND })
+  }
+
+  dispatch({ type: 'VIDEO_FOUND', payload: video })
 }
-
-dispatch({ type: 'VIDEO_FOUND', payload: video })
 */
