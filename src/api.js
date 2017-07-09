@@ -1,4 +1,3 @@
-import { fakeDelay } from './utils'
 import { videosHash, videosByCategory } from './data'
 
 export default async path =>
@@ -16,3 +15,4 @@ const findVideo = async slug => {
   return videosHash[slug]
 }
 
+const fakeDelay = ms => new Promise(res => setTimeout(res, ms))

@@ -1,5 +1,5 @@
 .video {
-  background: #000 !important;
+  background: rgb(27, 32, 34) !important;
   border-color: transparent !important;
   display: block !important;
 }
@@ -70,7 +70,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   border-top: 1px solid #1e1e1e;
-  background: #141414;
+  background: rgb(35, 40, 42);
 }
 .videoTitle {
   color: #c8c8c8;

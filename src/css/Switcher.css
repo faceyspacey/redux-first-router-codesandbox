@@ -56,7 +56,7 @@
   border-radius: 50%;
   background: #373737;
   background: -webkit-linear-gradient(left, #373737 10%, rgba(55,55,55,0) 42%);
-  background: linear-gradient(to right, #373737 10%, rgba(55,55,55,0) 42%);
+  background: linear-gradient(to right, rgb(67, 170, 217) 10%, rgba(55,55,55,0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -66,7 +66,7 @@
 .spinner > div:before {
   width: 50%;
   height: 50%;
-  background: #373737;
+  background: rgb(67, 170, 217);
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
@@ -74,7 +74,7 @@
   content: '';
 }
 .spinner > div:after {
-  background: #0f0f0f;
+  background: rgb(49, 71, 79);
   width: 75%;
   height: 75%;
   border-radius: 50%;

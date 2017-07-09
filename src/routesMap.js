@@ -1,8 +1,7 @@
 import { redirect, NOT_FOUND } from 'redux-first-router'
 import fetchData from './api'
-import { isAllowed } from './utils'
 
-export default {
+const routesMap = {
   HOME: '/',
   LIST: {
     path: '/list/:category',
@@ -75,6 +74,18 @@ export const options = {
     }
   }
 }
+
+const isAllowed = (type, state) => {
+  const role = routesMap[type] && routesMap[type].role // you can put arbitrary keys in routes
+
+  if (!role) return true
+  if (!state.user) return false // in a real app, a user isn't always logged in
+
+  return state.user.roles.includes(role)
+}
+
+export default routesMap
+
 
 // DON'T GO DOWN THERE!
 // |

@@ -56,7 +56,7 @@ const Sidebar = ({ onClick, path }) =>
   </div>
 
 const active = (currentPath, path) =>
-  currentPath === path ? 'active' : ''
+  currentPath === path ? 'link active' : 'link'
 
 const mapDispatch = { onClick: goToPage }
 const mapState = ({ location }) => ({ path: location.pathname })

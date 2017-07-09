@@ -5,11 +5,10 @@ const Home = () =>
   <div className='home'>
     <h1>HOME</h1>
 
-    <h2>
+    <h2 style={{marginBottom: 50}}>
       NOTE: The app is intended to be viewed with the console or redux
       devtools open as a sidebar, making the app less wide.
     </h2>
-    <div style={{ height: 20 }} />
 
     <span>
       {'HREF STRING: <Link to="/list/db-graphql">DB & GRAPHQL</Link>'}
@@ -23,7 +22,7 @@ const Home = () =>
       }
     </span>
 
-    <h1>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
+    <h1 style={{margin: 40}}>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
 
     <pre>
       {`
@@ -34,13 +33,16 @@ onClick: () => dispatch({
       `}
     </pre>
 
-    <h2>
-      {`DIRECTIONS: inspect the sidebar tabs to see the top set are real <a> tag links and the
+    <div>
+      <span style={{color: 'rgb(254, 209, 158)', display: 'inline'}}>DIRECTIONS: </span>
+      <span className='directions'>
+        {`inspect the sidebar tabs to see the top set are real <a> tag links and the
         bottom set not, yet the address bar changes for both. The decision is up to you.
         When using the <Link /> component, if you provide an action as the \`href\` prop, you never
         need to worry if you change the static path segments (e.g: \`/list\`) in the routes passed 
         to \`connectRoutes\`.`}
-    </h2>
+      </span>
+    </div>
   </div>
 
 export default Home
