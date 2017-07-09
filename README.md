@@ -1,6 +1,6 @@
 # Universal Demonstration of [Redux-First Router](https://github.com/faceyspacey/redux-first-router)
 
-![redux-first-router-demo screenshot](./screenshot.png)
+![redux-first-router-demo screenshot](./screenshot2.png)
 
 ## Installation
 
