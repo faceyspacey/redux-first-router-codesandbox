@@ -8,6 +8,12 @@
           flex: 1;
 }
 
+@media (max-height: 700px) { 
+  .switcher {
+    height: calc(100vh - 20px);
+  }
+}
+
 .switcher > div {
   position: absolute;
   top: 0px;
