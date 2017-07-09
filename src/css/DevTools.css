@@ -38,13 +38,13 @@
   text-align: center;
 }
 .titleBar span:nth-child(1) {
-  color: #89f975;
+  color: rgb(260, 194, 117);
 }
 .titleBar span:nth-child(2) {
-  color: #f42b63;
+  color: rgb(173, 123, 162);
 }
 .titleBar span:nth-child(3) {
-  color: #638bf6;
+  color: rgb(93, 156, 204);
 }
 .devTools {
   display: -webkit-box;
@@ -68,9 +68,9 @@
   overflow: hidden;
 }
 .actionsBox {
-  color: #89f975;
+  color: rgb(243, 187, 87);
   border-right: 4px solid rgb(53, 70, 79);
 }
 .stateBox {
-  color: #396eff;
+  color: rgb(93, 156, 204);
 }
