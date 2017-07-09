@@ -6,8 +6,7 @@ const Home = () =>
     <h1>HOME</h1>
 
     <h2 style={{marginBottom: 50}}>
-      NOTE: The app is intended to be viewed with the console or redux
-      devtools open as a sidebar, making the app less wide.
+      NOTE: The top set of links are real links made like this:
     </h2>
 
     <span>
