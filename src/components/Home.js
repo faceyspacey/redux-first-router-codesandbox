@@ -18,7 +18,7 @@ const Home = () =>
     <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>ACTION:</span>
     <span>{"<Link to={{ type: 'LIST', payload: {slug: 'fp'} }}>FP</Link>"}</span>
 
-    <h1 style={{margin: 20}}>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
+    <h1 style={{margin: 20}}>EVENT HANDLERS DISPATCH ACTION</h1>
 
     <pre>
       {`
