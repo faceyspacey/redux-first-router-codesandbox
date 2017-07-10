@@ -6,7 +6,8 @@ const videos = [
     by: 'Rich Hickey',
     category: 'Functional Programming',
     categorySlug: 'fp',
-    color: 'blue',
+    color: 'rgb(102, 82, 57)',
+    titleColor: 'rgba(102, 82, 57, .6)',
     tip: `Redux-First Router does not require you to embed actual links into the page 
             to get the benefit of a synced address bar. Regular actions if matched
             will change the URL. That makes it easy to apply to an existing SPA Redux
@@ -18,7 +19,8 @@ const videos = [
     by: 'Richard Feldman',
     category: 'Functional Programming',
     categorySlug: 'fp',
-    color: 'blue',
+    color: 'rgb(102, 82, 57)',
+    titleColor: 'rgba(102, 82, 57, .6)',
     tip: `Redux reducers programmatically allow you to produce any state you need.
           So logically Route Matching components such as in React Reacter only
           allow you to do LESS, but with a MORE complicated API.`
@@ -29,7 +31,8 @@ const videos = [
     by: 'David Nolen',
     category: 'Functional Programming',
     categorySlug: 'fp',
-    color: 'blue',
+    color: 'rgb(102, 82, 57)',
+    titleColor: 'rgba(102, 82, 57, .6)',
     tip: `In your actions.meta.location key passed to your reducers you have all sorts
           of information: the previous route, its type and payload, history, whether
           the browser back/next buttons were used and if the action was dispatched on load.
@@ -41,7 +44,8 @@ const videos = [
     by: 'Adam Miskiewicz',
     category: 'React & Redux',
     categorySlug: 'react-redux',
-    color: 'red',
+    color: 'rgb(253, 203, 140)',
+    titleColor: 'rgba(253, 203, 140, .6)',
     tip: `Redux-First Router tries in all cases to mirror the Redux API. There is no need
           to pass your thunk :params such as in an express request or the like. Just grab it
           from the payload stored in the location state.`
@@ -52,7 +56,8 @@ const videos = [
     by: 'Andrew Clark',
     category: 'React & Redux',
     categorySlug: 'react-redux',
-    color: 'red',
+    color: 'rgb(253, 203, 140)',
+    titleColor: 'rgba(253, 203, 140, .6)',
     tip: `Redux-First Router requires your payload to be objects, as its keys are directionally extracted
           and from your URLs and passed from payloads to URL path segments. Your free
           to use whatever payload you like for redux actions not connected to your routes. Not all
@@ -64,7 +69,8 @@ const videos = [
     by: 'Dan Abramov',
     category: 'React & Redux',
     categorySlug: 'react-redux',
-    color: 'red',
+    color: 'rgb(253, 203, 140)',
+    titleColor: 'rgba(253, 203, 140, .6)',
     tip: `The <Link /> component embeds paths in hrefs for SEO, but you don't need to use it
           to get the benefits of a changing address bar. Actions that match routes will
           trigger the corresponding URL even if you dispatch them directly.`
@@ -75,7 +81,8 @@ const videos = [
     by: 'Martin Kleppmann',
     category: 'Database & GraphQL',
     categorySlug: 'db-graphql',
-    color: 'orange',
+    color: 'rgb(87, 157, 213)',
+    titleColor: 'rgba(87, 157, 213, .6)',
     tip: `The 'thunk' feature is optional, but very useful. Using our 'thunk' feature allows you
           to define it in one place while linking to the route from many places without
           worrying about getting the data first. It's also very easy to handle server-side.`
@@ -86,7 +93,8 @@ const videos = [
     by: 'Martijn Walraven',
     category: 'Database & GraphQL',
     categorySlug: 'db-graphql',
-    color: 'orange',
+    color: 'rgb(87, 157, 213)',
+    titleColor: 'rgba(87, 157, 213, .6)',
     tip: `Structure your reducers so that less actions are used to trigger the same state. 
           Your actions will become more 'page-like'. As a result your reducers
           will need to do more "tear down" work when leaving corresponding pages. It's also
@@ -98,7 +106,8 @@ const videos = [
     by: 'Sacha Greif',
     category: 'Database & GraphQL',
     categorySlug: 'db-graphql',
-    color: 'orange',
+    color: 'rgb(87, 157, 213)',
+    titleColor: 'rgba(87, 157, 213, .6)',
     tip: `Using a hash of slugs within one of your reducers is the recommended approach to 
           maintain a normalized set of entities to get the benefits of SEO. This is as opposed
           to using IDs. Refrain from using normalizr or Apollo until your app justifies it.`

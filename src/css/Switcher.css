@@ -22,7 +22,7 @@
   height: 100%;
 
   background: #23282A;
-  border: 1px solid #23282A;
+  border: 1px solid rgba(40, 40, 50, 1);
   box-sizing: border-box;
   color: white;
 }

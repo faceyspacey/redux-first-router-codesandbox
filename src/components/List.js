@@ -8,7 +8,7 @@ const List = ({ videos }) =>
     {videos.map((video, key) => <Row {...video} key={key} />)}
   </div>
 
-const Row = ({ slug, title, youtubeId, by, color }) =>
+const Row = ({ slug, title, youtubeId, by, color, titleColor }) =>
   <Link
     className='row'
     to={`/video/${slug}`}
@@ -17,7 +17,7 @@ const Row = ({ slug, title, youtubeId, by, color }) =>
     <div className='avatar' style={{ backgroundColor: color }}>
       {initials(by)}
     </div>
-    <span className='title'>{title}</span>
+    <span className='title' style={{background: titleColor}}>{title}</span>
 
     <div className='gradient' />
     <span className='by'>by: {by}</span>
