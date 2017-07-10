@@ -8,6 +8,7 @@
   background: rgb(35, 40, 42);
   border: 1px solid #27292a;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (min-height: 700px) { 
