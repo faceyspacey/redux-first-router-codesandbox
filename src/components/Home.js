@@ -5,18 +5,18 @@ const Home = () =>
   <div className='home'>
     <h1>HOME</h1>
 
-    <h2 style={{marginBottom: 30}}>
+    <h2>
       NOTE: The top set of links are real links made like this:
     </h2>
 
-    <span style={{color: 'rgb(200,200,200)', top: 0}}>HREF STRING:</span>
+    <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>HREF STRING:</span>
     <span>{"<Link to='/list/db-graphql'>DB & GRAPHQL</Link>"}</span>
 
-    <span style={{color: 'rgb(200,200,200)', top: 0}}>PATH SEGMENTS:</span>
+    <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>PATH SEGMENTS:</span>
     <span>{"<Link to={['list', 'react-redux']}>REACT & REDUX</Link>"}</span>
 
-    <span style={{color: 'rgb(200,200,200)', top: 0}}>ACTION:</span>
-    <span>{"<Link to={{ type: 'LIST', payload: { category: 'fp' } }}>FP</Link>"}x</span>
+    <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>ACTION:</span>
+    <span>{"<Link to={{ type: 'LIST', payload: {slug: 'fp'} }}>FP</Link>"}</span>
 
     <h1 style={{margin: 20}}>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
 

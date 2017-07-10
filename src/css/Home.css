@@ -27,10 +27,8 @@
 .home span {
   color: rgb(106, 118, 124); 
   display: block;
-  
-  margin: 16.5px 0px;
+  margin: 8px 0px;
   position: relative;
-  top: -13px;
 }
 
 .home pre {
