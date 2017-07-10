@@ -34,3 +34,5 @@ export default (state = 'next', action = {}) => {
   return state
 }
 
+// this is an example of some fun stuff you can do easily trigger animations 
+// from state. Look into <TransitionGroup /> within components/Switcher.js

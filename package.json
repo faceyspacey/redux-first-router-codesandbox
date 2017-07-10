@@ -2,7 +2,7 @@
   "name": "cra-test",
   "version": "0.1.0",
   "title": "Redux-First Router Demo",
-  "description": "For the full-featured SSR demo, git clone: https://github.com/faceyspacey/redux-first-router-demo",
+  "description": "For the full-featured SSR + Splitting demo, git clone: https://github.com/faceyspacey/redux-first-router-demo",
   "dependencies": {
     "history": "^4.6.3",
     "react": "^15.6.1",

@@ -33,7 +33,7 @@ onClick: () => dispatch({
     </pre>
 
     <div>
-      <span style={{color: 'rgb(254, 209, 158)', display: 'inline'}}>DIRECTIONS: </span>
+      <span style={{color: '#c5af8f', display: 'inline'}}>DIRECTIONS: </span>
       <span className='directions'>
         {`inspect the sidebar tabs to see the top set are real <a> tag links and the
         bottom set not, yet the address bar changes for both. The decision is up to you.

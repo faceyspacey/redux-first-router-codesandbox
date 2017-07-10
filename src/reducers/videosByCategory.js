@@ -24,3 +24,8 @@ export default (state = initialState, action = {}) => {
 }
 
 // eg: { category: 'fp', categories: { fp: ['slug-1', 'slug-2'] } }
+
+// This is a "real" reducer. I.e. something closer to the complexity you might
+// see in a real app. Pay close attention to how the `category` is extracted
+// from the payload + path params. And how it's used to inidcate the current
+// array of video slugs once they are fetched.

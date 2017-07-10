@@ -1,6 +1,9 @@
 import { redirect, NOT_FOUND } from 'redux-first-router'
 import fetchData from './api'
 
+// the primary thing to take note of on this page is the way "route thunks"
+// allow you to fetch data in an identical way to dispatching thunks
+
 const routesMap = {
   HOME: '/',
   LIST: {
@@ -14,6 +17,8 @@ const routesMap = {
       if (categories[category]) return // has data in redux already
       const videos = await fetchData(`/api/videos/${category}`)
 
+      // you can dispatch NOT_FOUND any time you want, just as the middleware
+      // will automatically do so when no matching routes are found
       if (videos.length === 0) {
         return dispatch({ type: NOT_FOUND })
       }
@@ -29,7 +34,7 @@ const routesMap = {
       // visit a VIDEO page in the app, then refresh the page, then make
       // this work when visited directly by copying the LIST route above and
       // using fetchData(`/api/video/${slug}`) and by dispatching
-      // the the corresponding action type which I'll leave up to you to find
+      // the corresponding action type which I'll leave up to you to find
       // in ../reducers/index.js :)
     }
   },
@@ -40,8 +45,8 @@ const routesMap = {
         const { slug } = getState().location.payload
         const action = redirect({ type: 'VIDEO', payload: { slug } })
 
-        // we simply don't let you visit the playing video page directly
-        // ...cuz that's what we feel like doing, but we like it URL-ized
+        // we don't let you visit the playing video page directly because in this case
+        // it wouldn't be good UX, but we like it URL-ized while navigating the app
         dispatch(action)
       }
     }
@@ -52,6 +57,10 @@ const routesMap = {
     role: 'admin'   // + in reducers/index.js set the user's role to admin to get in
   }
 }
+
+// The purpose of the below options is to demonstrate auth filtering.
+// onBeforeChange fires before going to a new route, and you can
+// redirect if certian conditions aren't met.
 
 export const options = {
   onBeforeChange: (dispatch, getState, action) => {
