@@ -5,7 +5,7 @@ const Home = () =>
   <div className='home'>
     <h1>HOME</h1>
 
-    <h2 style={{marginBottom: 50}}>
+    <h2 style={{marginBottom: 30}}>
       NOTE: The top set of links are real links made like this:
     </h2>
 
@@ -21,7 +21,7 @@ const Home = () =>
       }
     </span>
 
-    <h1 style={{margin: 40}}>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
+    <h1 style={{margin: 20}}>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
 
     <pre>
       {`
