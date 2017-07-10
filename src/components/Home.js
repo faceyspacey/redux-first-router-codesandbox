@@ -9,13 +9,13 @@ const Home = () =>
       NOTE: The top set of links are real links made like this:
     </h2>
 
-    <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>HREF STRING:</span>
+    <span style={{color: 'rgb(200,200,200)', marginTop: 20}}>HREF STRING:</span>
     <span>{"<Link to='/list/db-graphql'>DB & GRAPHQL</Link>"}</span>
 
-    <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>PATH SEGMENTS:</span>
+    <span style={{color: 'rgb(200,200,200)', marginTop: 20}}>PATH SEGMENTS:</span>
     <span>{"<Link to={['list', 'react-redux']}>REACT & REDUX</Link>"}</span>
 
-    <span style={{color: 'rgb(200,200,200)', marginTop: 8}}>ACTION:</span>
+    <span style={{color: 'rgb(200,200,200)', marginTop: 20}}>ACTION:</span>
     <span>{"<Link to={{ type: 'LIST', payload: {slug: 'fp'} }}>FP</Link>"}</span>
 
     <h1 style={{margin: 20}}>EVENT HANDLERS DISPATCH ACTION</h1>
