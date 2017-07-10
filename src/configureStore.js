@@ -1,5 +1,5 @@
- import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
+
 import { connectRoutes } from 'redux-first-router'
 
 import routesMap from './routesMap'
@@ -21,4 +21,6 @@ export default history => {
   return createStore(rootReducer, enhancers)
 }
 
-const composeEnhancers = composeWithDevTools({ actionCreators })
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  : compose
