@@ -9,17 +9,14 @@ const Home = () =>
       NOTE: The top set of links are real links made like this:
     </h2>
 
-    <span>
-      {'HREF STRING: <Link to="/list/db-graphql">DB & GRAPHQL</Link>'}
-    </span>
-    <span>
-      {"PATH SEGMENTS: <Link to={['list', 'react-redux']}>REACT & REDUX</Link>"}
-    </span>
-    <span>
-      {
-        "ACTION: <Link to={{ type: 'LIST', payload: { category: 'fp' } }}>FP</Link>"
-      }
-    </span>
+    <span style={{color: 'rgb(200,200,200)', top: 0}}>HREF STRING:</span>
+    <span>{"<Link to='/list/db-graphql'>DB & GRAPHQL</Link>"}</span>
+
+    <span style={{color: 'rgb(200,200,200)', top: 0}}>PATH SEGMENTS:</span>
+    <span>{"<Link to={['list', 'react-redux']}>REACT & REDUX</Link>"}</span>
+
+    <span style={{color: 'rgb(200,200,200)', top: 0}}>ACTION:</span>
+    <span>{"<Link to={{ type: 'LIST', payload: { category: 'fp' } }}>FP</Link>"}x</span>
 
     <h1 style={{margin: 20}}>EVENT HANDLERS DISPATCH ACTION (NO SEO BENEFITS)</h1>
 
