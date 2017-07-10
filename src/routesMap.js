@@ -4,7 +4,7 @@ import fetchData from './api'
 // the primary thing to take note of on this page is the way "route thunks"
 // allow you to fetch data in an identical way to dispatching thunks
 
-const routesMap = {
+export default {
   HOME: '/',
   LIST: {
     path: '/list/:category',
@@ -57,44 +57,6 @@ const routesMap = {
     role: 'admin'   // + in reducers/index.js set the user's role to admin to get in
   }
 }
-
-// The purpose of the below options is to demonstrate auth filtering.
-// onBeforeChange fires before going to a new route, and you can
-// redirect if certian conditions aren't met.
-
-export const options = {
-  onBeforeChange: (dispatch, getState, action) => {
-    const allowed = isAllowed(action.type, getState())
-
-    if (!allowed) {
-      const action = redirect({ type: 'LOGIN' })
-      dispatch(action)
-    }
-  },
-  onAfterChange: (dispatch, getState) => {
-    const { type } = getState().location
-
-    if (type === 'LOGIN') {
-      setTimeout(() => {
-        alert(
-          "NICE, You're adventurous! First look in the 'src/routesMap.js' file to see how you got redirected to /login. Then try setting the user's role to 'admin' in reducers/index.js to get in access the Admin Panel. Then 'onBeforeChange' will let you in."
-        )
-      }, 1500)
-    }
-  }
-}
-
-const isAllowed = (type, state) => {
-  const role = routesMap[type] && routesMap[type].role // you can put arbitrary keys in routes
-
-  if (!role) return true
-  if (!state.user) return false // in a real app, a user isn't always logged in
-
-  return state.user.roles.includes(role)
-}
-
-export default routesMap
-
 
 // DON'T GO DOWN THERE!
 // |

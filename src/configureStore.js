@@ -2,7 +2,8 @@
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { connectRoutes } from 'redux-first-router'
 
-import routesMap, { options } from './routesMap'
+import routesMap from './routesMap'
+import options from './options'
 import * as reducers from './reducers'
 import * as actionCreators from './actions'
 
