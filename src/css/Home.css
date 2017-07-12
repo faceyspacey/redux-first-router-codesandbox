@@ -42,3 +42,9 @@ span.directions {
   display: inline;
   color: rgb(82, 175, 218); 
 }
+
+.articleLinks {
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, sans-serif;
+}
