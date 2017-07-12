@@ -49,7 +49,7 @@ onClick: () => dispatch({
     <br />
     
     > <a className="articleLinks" target="_blank" href="https://medium.com/faceyspacey/pre-release-redux-first-router-a-step-beyond-redux-little-router-cd2716576aea">
-      INITIAL LAUNCH ARTICLE THAT DESCRIBES HOW RFR CAME TO BE
+      WHY RFR IS THE ANSWER TO ROUTING FOR REDUX
     </a>
   </div>
 
