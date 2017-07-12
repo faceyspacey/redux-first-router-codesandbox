@@ -13,6 +13,7 @@
   text-align: center;
   margin-top: 0px;
   text-shadow: 1px 1px 1px rgb(5,5,5);
+  -webkit-font-smoothing: antialiased;
 }
 
 .home h2 {
@@ -22,6 +23,7 @@
   text-align: center;
   font-weight: normal;
   margin-top: -4px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .home span {
@@ -35,6 +37,7 @@
   margin-top: -20px;
   color: rgb(106, 118, 124); 
   font-size: 14px;
+  -webkit-font-smoothing: antialiased;
 }
 
 
