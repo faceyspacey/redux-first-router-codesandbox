@@ -41,14 +41,14 @@ onClick: () => dispatch({
     </div>
 
     <h1 style={{marginTop: 25 }}>ARTICLES ABOUT REDUX-FIRST ROUTER:</h1>
-    > <a className="articleLinks" href="https://medium.com/faceyspacey/redux-first-router-lookin-sexy-on-code-sandbox-d9d9bea15053">
+    > <a className="articleLinks" target="_blank" href="https://medium.com/faceyspacey/redux-first-router-lookin-sexy-on-code-sandbox-d9d9bea15053">
       THINGS YOU YOU SHOULD PAY ATTENTION TO IN THIS SANDBOX
     </a>
 
     <br />
     <br />
     
-    > <a className="articleLinks" href="https://medium.com/faceyspacey/pre-release-redux-first-router-a-step-beyond-redux-little-router-cd2716576aea">
+    > <a className="articleLinks" target="_blank" href="https://medium.com/faceyspacey/pre-release-redux-first-router-a-step-beyond-redux-little-router-cd2716576aea">
       INITIAL LAUNCH ARTICLE THAT DESCRIBES HOW RFR CAME TO BE
     </a>
   </div>
