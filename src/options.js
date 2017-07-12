@@ -18,11 +18,7 @@ export default {
     const { type } = getState().location
 
     if (type === 'LOGIN') {
-      setTimeout(() => {
-        alert(
-          "NICE, You're adventurous! First look in the 'src/routesMap.js' file to see how you got redirected to /login. Then try setting the user's role to 'admin' in reducers/index.js to get in access the Admin Panel. Then 'onBeforeChange' will let you in."
-        )
-      }, 1500)
+      setTimeout(() => alert(alertMessage), 1500)
     }
   }
 }
@@ -35,3 +31,5 @@ const isAllowed = (type, user, routesMap) => {
 
   return user.roles.includes(role)
 }
+
+const alertMessage = "NICE, You're adventurous! First look in the 'src/routesMap.js' file to see how you got redirected to /login. Then try setting the user's role to 'admin' in reducers/index.js to get in access the Admin Panel. Then 'onBeforeChange' will let you in."
