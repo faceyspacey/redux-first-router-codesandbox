@@ -63,7 +63,7 @@ const routesMap = {
   }
 }
 
-export defeault routesMap
+export default routesMap
 
 // DON'T GO DOWN THERE!
 // |
