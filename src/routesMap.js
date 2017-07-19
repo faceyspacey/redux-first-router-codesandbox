@@ -24,7 +24,10 @@ export default {
         return dispatch({ type: NOT_FOUND })
       }
 
-      dispatch({ type: 'VIDEOS_FETCHED', payload: { videos, category } })
+      dispatch({ 
+        type: 'VIDEOS_FETCHED',
+        payload: { videos, category } 
+      })
     }
   },
   VIDEO: {
