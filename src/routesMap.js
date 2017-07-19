@@ -5,7 +5,7 @@ import fetchData from './api'
 // familiarity of route thunks
 
 
-export default {
+const routesMap = {
   HOME: '/',
   LIST: {
     path: '/list/:category',
@@ -62,6 +62,8 @@ export default {
     role: 'admin'   // + set the user's role to admin in reducer
   }
 }
+
+export defeault routesMap
 
 // DON'T GO DOWN THERE!
 // |
