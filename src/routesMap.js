@@ -65,7 +65,6 @@ const routesMap = {
 
 export default routesMap
 
-
 // DON'T GO DOWN THERE!
 // |
 // |
