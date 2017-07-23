@@ -15,13 +15,8 @@ const Switcher = ({ page, direction, isLoading }) =>
     </Transition>
   </TransitionGroup>
 
-const isListFetching = (page, videosByCategory) => {
-  const { category, categories } = videosByCategory
-  return page === 'List' && !categories[category]
-}
-
 const mapState = ({ page, direction, videosByCategory }) => {
-  const isLoading = isListFetching(page, videosByCategory)
+  const isLoading = videosByCategory.isLoading
   return { page, direction, isLoading }
 }
 

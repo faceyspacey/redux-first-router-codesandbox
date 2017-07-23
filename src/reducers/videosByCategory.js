@@ -4,19 +4,27 @@ export default (state = initialState, action = {}) => {
   switch (action.type) {
     case 'LIST': {
       const { category } = action.payload
-      return { ...state, category }
+      return { 
+        ...state,
+        category,
+        isLoading: !state.categories[category] // if prev state has cat, its loaded already
+      }
     }
     case 'VIDEOS_FETCHED': {
       const { category, videos } = action.payload
       const slugs = videos.map(video => video.slug)
 
-      return {
-        category, // selected category
-        categories: {
-          ...state.categories,
-          [category]: slugs
-        }
+      const categories = {
+        ...state.categories,
+        [category]: slugs
       }
+      
+      // This avoids race condition where you change tabs too quickly.
+      // What we do is accept the new data without changing the category
+      // and without setting isLoading to false :)
+      if (category !== state.category) return { ...state, categories }
+
+      return { category, isLoading: false, categories }
     }
     default:
       return state

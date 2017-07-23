@@ -5151,17 +5151,17 @@ redux-devtools-extension@^2.13.2:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.2.tgz#e0f9a8e8dfca7c17be92c7124958a3b94eb2911d"
 
-redux-first-router-link@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/redux-first-router-link/-/redux-first-router-link-1.0.7.tgz#527f52d06fd89e76c6ac9abc053216a5455f5394"
+redux-first-router-link@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/redux-first-router-link/-/redux-first-router-link-1.1.1.tgz#922acd28db38d530f3232315dc6b481418945096"
   dependencies:
     path-to-regexp "^1.7.0"
     prop-types "15.5.10"
     rudy-match-path "^0.1.0"
 
-redux-first-router@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/redux-first-router/-/redux-first-router-1.7.4.tgz#79169512b35d9bc46b72f5cbd95b3894f35675a0"
+redux-first-router@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/redux-first-router/-/redux-first-router-1.8.8.tgz#1acc1409824f5ea8a3cdabe464d45eb224f5bd07"
   dependencies:
     path-to-regexp "^1.7.0"
 
