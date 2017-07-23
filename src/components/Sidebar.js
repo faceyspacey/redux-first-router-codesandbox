@@ -52,7 +52,7 @@ const Sidebar = ({ onClick, path }) =>
 
     <div style={{height: 14 }} />
 
-    <Link to={{ type: 'ADMIN' }}>ADMIN</Link>
+    <Link to={{ type: 'ADMIN' }} className={active(path, '/admin')}>ADMIN</Link>
   </div>
 
 const active = (currentPath, path) =>
