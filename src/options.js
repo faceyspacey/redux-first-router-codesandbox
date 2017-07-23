@@ -32,4 +32,4 @@ const isAllowed = (type, user, routesMap) => {
   return user.roles.includes(role)
 }
 
-const alertMessage = "NICE, You're adventurous! First look in the 'src/routesMap.js' file to see how you got redirected to /login. Then try setting the user's role to 'admin' in reducers/index.js to get in access the Admin Panel. Then 'onBeforeChange' will let you in."
+const alertMessage = "NICE, You're adventurous! First look in the 'src/routesMap.js' file to see how you got redirected to /login. Then try setting the user's role to 'admin' in reducers/user.js to get in access the Admin Panel. Then 'onBeforeChange' will let you in."
