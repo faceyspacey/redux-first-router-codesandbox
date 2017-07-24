@@ -7,3 +7,5 @@ export default (state = {}, action = {}) => {
 
   return state
 }
+
+// eg: { fp: ['slug-1', 'slug-2'], 'react-redux': ['slug-etc'] }
