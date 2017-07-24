@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { TransitionGroup, Transition } from 'transition-group'
 import universal from 'react-universal-component'
-import '../css/Switcher.css'
 import isLoading from '../selectors/isLoading'
+import '../css/Switcher.css'
 
 const Switcher = ({ page, direction, isLoading }) =>
   <TransitionGroup
