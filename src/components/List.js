@@ -28,10 +28,9 @@ const youtubeBackground = youtubeId =>
 
 const initials = by => by.split(' ').map(name => name[0]).join('')
 
-const mapState = state => {
-  const { category, categories } = state.videosByCategory
-  const slugs = categories[category] || []
-  const videos = slugs.map(slug => state.videosHash[slug])
+const mapState = ({ category, videosByCategory, videosHash }) => {
+  const slugs = videosByCategory[category] || []
+  const videos = slugs.map(slug => videosHash[slug])
   return { videos }
 }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { TransitionGroup, Transition } from 'transition-group'
 import universal from 'react-universal-component'
 import '../css/Switcher.css'
+import isLoading from '../selectors/isLoading'
 
 const Switcher = ({ page, direction, isLoading }) =>
   <TransitionGroup
@@ -15,10 +16,11 @@ const Switcher = ({ page, direction, isLoading }) =>
     </Transition>
   </TransitionGroup>
 
-const mapState = ({ page, direction, videosByCategory }) => {
-  const isLoading = videosByCategory.isLoading
-  return { page, direction, isLoading }
-}
+const mapState = ({ page, direction, ...state }) => ({
+  page,
+  direction,
+  isLoading: isLoading(state)
+})
 
 export default connect(mapState)(Switcher)
 

@@ -11,10 +11,10 @@ const routesMap = {
     thunk: async (dispatch, getState) => {
       const {
         location: { payload: { category } },
-        videosByCategory: { categories }
+        videosByCategory
       } = getState()
 
-      if (categories[category]) return // has data in redux already
+      if (videosByCategory[category]) return // has data in redux already
       const videos = await fetchData(`/api/videos/${category}`)
 
       // you can dispatch NOT_FOUND any time you want, just as the
@@ -110,6 +110,6 @@ thunk: async (dispatch, getState) => {
     return dispatch({ type: NOT_FOUND })
   }
 
-  dispatch({ type: 'VIDEO_FOUND', payload: video })
+  dispatch({ type: 'VIDEO_FOUND', payload: { slug, video } })
 }
 */
