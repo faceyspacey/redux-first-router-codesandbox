@@ -6,8 +6,8 @@ export default createSelector([
     state => state.videosHash,
     state => state.videosByCategory,
   ],
-  (type, { slug, category }, videosHash, videosByCategory) => {
-    if (type === 'VIDEO') return !videosHash[slug]
-    if (type === 'LIST') return !videosByCategory[category]
+  (type, { slug, category }, hash1, hash2) => {
+    if (type === 'VIDEO') return !hash1[slug]
+    if (type === 'LIST') return !hash2[category]
   }
 )
