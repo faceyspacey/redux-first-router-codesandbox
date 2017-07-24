@@ -1,4 +1,2 @@
-const initialState = { category: '', categories: {} }
-
-export default (state = initialState, action = {}) =>
+export default (state = '', action = {}) =>
   action.type === 'LIST' ? action.payload.category : state
