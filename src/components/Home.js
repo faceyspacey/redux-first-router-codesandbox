@@ -41,15 +41,40 @@ onClick: () => dispatch({
     </div>
 
     <h1 style={{marginTop: 25 }}>ARTICLES ABOUT REDUX-FIRST ROUTER:</h1>
-    > <a className="articleLinks" target="_blank" href="https://medium.com/faceyspacey/redux-first-router-lookin-sexy-on-code-sandbox-d9d9bea15053" rel="noopener noreferrer">
-      THINGS YOU YOU SHOULD PAY ATTENTION TO IN THIS SANDBOX
+    {'> '}
+    <a
+      className='articleLinks'
+      target='_blank'
+      href='https://medium.com/faceyspacey/redux-first-router-lookin-sexy-on-code-sandbox-d9d9bea15053'
+      rel='noopener noreferrer'
+    >
+      THINGS TO SHOULD PAY ATTENTION TO IN THIS DEMO
     </a>
 
     <br />
     <br />
-    
-    > <a className="articleLinks" target="_blank" href="https://medium.com/faceyspacey/pre-release-redux-first-router-a-step-beyond-redux-little-router-cd2716576aea" rel="noopener noreferrer">
+
+    {'> '}
+    <a
+      className='articleLinks'
+      target='_blank'
+      href='https://medium.com/faceyspacey/pre-release-redux-first-router-a-step-beyond-redux-little-router-cd2716576aea'
+      rel='noopener noreferrer'
+    >
       WHY RFR IS THE ANSWER TO ROUTING FOR REDUX
+    </a>
+
+    <br />
+    <br />
+
+    {'> '}
+    <a
+      className='articleLinks'
+      target='_blank'
+      href='https://medium.com/faceyspacey/redux-first-router-data-fetching-solving-the-80-use-case-for-async-middleware-14529606c262'
+      rel='noopener noreferrer'
+    >
+      DATA-FETCHING + SIMPLER REDUX MIDDLEWARE /W RFR
     </a>
   </div>
 
