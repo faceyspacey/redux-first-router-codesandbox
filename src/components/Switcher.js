@@ -5,13 +5,6 @@ import universal from 'react-universal-component'
 import isLoading from '../selectors/isLoading'
 import '../css/Switcher.css'
 
-const UniversalComponent = universal(props => import(`./${props.page}`), {
-  minDelay: 500,
-  chunkName: props => props.page,
-  loading: () => <div className='spinner'><div /></div>,
-  error: () => <div className='notFound'>PAGE NOT FOUND - 404</div>
-})
-
 const Switcher = ({ page, direction, isLoading }) =>
   <TransitionGroup
     className={`switcher ${direction}`}
@@ -22,6 +15,13 @@ const Switcher = ({ page, direction, isLoading }) =>
       <UniversalComponent page={page} isLoading={isLoading} />
     </Transition>
   </TransitionGroup>
+
+const UniversalComponent = universal(props => import(`./${props.page}`), {
+  minDelay: 500,
+  chunkName: props => props.page,
+  loading: () => <div className='spinner'><div /></div>,
+  error: () => <div className='notFound'>PAGE NOT FOUND - 404</div>
+})
 
 const mapState = ({ page, direction, ...state }) => ({
   page,
