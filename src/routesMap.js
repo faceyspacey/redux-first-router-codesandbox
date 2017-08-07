@@ -1,5 +1,5 @@
 import { redirect, NOT_FOUND } from 'redux-first-router'
-import fetchData from './api'
+import fetch from './api'
 
 // the primary thing to take note of on this page is the
 // familiarity of route thunks
@@ -14,18 +14,16 @@ const routesMap = {
         videosByCategory
       } = getState()
 
-      if (videosByCategory[category]) return // has data in redux already
-      const videos = await fetchData(`/api/videos/${category}`)
+      if (videosByCategory[category]) return 
+      const vids = await fetch(`/api/videos/${category}`)
 
-      // you can dispatch NOT_FOUND any time you want, just as the
-      // middleware will automatically do when no route is matched
-      if (videos.length === 0) {
+      if (vids.length === 0) {
         return dispatch({ type: NOT_FOUND })
       }
 
       dispatch({ 
         type: 'VIDEOS_FETCHED',
-        payload: { videos, category } 
+        payload: { videos: vids, category } 
       })
     }
   },
@@ -34,11 +32,13 @@ const routesMap = {
     thunk: async (dispatch, getState) => {
       // TASK FOR YOU. YES, YOU!
       //
-      // visit a VIDEO page in the app, then refresh the page, then
-      // make this work when visited directly by copying the LIST 
-      // route above and using fetchData(`/api/video/${slug}`) and 
-      // by dispatching the corresponding action type which I'll 
-      // leave up to you to find in ../reducers/index.js :)
+      // visit a VIDEO page in the app, then refresh the
+      // page, then make this work when visited directly 
+      // by copying the LIST  route above and using 
+      // fetchData(`/api/video/${slug}`) and by 
+      // dispatching the corresponding action type which
+      // I'll leave up to you to find in 
+      // ../reducers/index.js :)
     }
   },
   PLAY: {
@@ -47,18 +47,14 @@ const routesMap = {
       if (typeof window === 'undefined') {
         const { slug } = getState().location.payload
         const action = redirect({ type: 'VIDEO', payload: { slug } })
-
-        // we don't let you visit the playing video page directly 
-        // because in this case it wouldn't be good UX, but we like 
-        // it URL-ized while navigating the app
         dispatch(action)
       }
     }
   },
   LOGIN: '/login',
   ADMIN: {
-    path: '/admin', // TRY: visit this path or dispatch ADMIN
-    role: 'admin'   // + set the user's role to admin in reducer
+    path: '/admin', // TRY: visit this path ADMIN
+    role: 'admin'   // + set the user's role to admin
   }
 }
 
@@ -100,7 +96,7 @@ export default routesMap
 // ▼
 
 // ANSWER: videoRoute.thunk.body:
-/* HURRAY! You found the answers on the back of the cereal box!
+/* HURRAY! You found the answers on the cereal box!
 
 thunk: async (dispatch, getState) => {
   const { location: { payload: { slug } } } = getState()
