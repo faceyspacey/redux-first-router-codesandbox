@@ -10,12 +10,12 @@ const routesMap = {
     path: '/list/:category',
     thunk: async (dispatch, getState) => {
       const {
-        location: { payload: { category } },
+        location: { payload: { category: cat } },
         videosByCategory
       } = getState()
 
-      if (videosByCategory[category]) return 
-      const vids = await fetch(`/api/videos/${category}`)
+      if (videosByCategory[cat]) return 
+      const vids = await fetch(`/api/videos/${cat}`)
 
       if (vids.length === 0) {
         return dispatch({ type: NOT_FOUND })
@@ -23,7 +23,7 @@ const routesMap = {
 
       dispatch({ 
         type: 'VIDEOS_FETCHED',
-        payload: { videos: vids, category } 
+        payload: { videos: vids, category: cat } 
       })
     }
   },
@@ -106,6 +106,9 @@ thunk: async (dispatch, getState) => {
     return dispatch({ type: NOT_FOUND })
   }
 
-  dispatch({ type: 'VIDEO_FOUND', payload: { slug, video } })
+  dispatch({ 
+    type: 'VIDEO_FOUND',
+    payload: { slug, video } 
+  })
 }
 */
