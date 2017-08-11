@@ -1,9 +1,6 @@
 import { redirect, NOT_FOUND } from 'redux-first-router'
 import fetch from './api'
 
-// the primary thing to take note of on this page is the
-// familiarity of route thunks
-
 const routesMap = {
   HOME: '/',
   LIST: {
