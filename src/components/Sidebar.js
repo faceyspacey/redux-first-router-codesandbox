@@ -52,7 +52,7 @@ const Sidebar = ({ onClick, path }) =>
 
     <div style={{height: 14 }} />
 
-    <Link to='https://github.com/faceyspacey/redux-first-router' target='_blank'>
+    <Link to='https://github.com/faceyspacey/redux-first-router' target='_blank' style={{padding: 7}}>
       <GithubLogo />
       {' RFR on Github'}
     </Link>
